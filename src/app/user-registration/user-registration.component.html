@@ -1,0 +1,25 @@
+<div class="registration-form card">
+  <div class="card-header">
+    <h2>User Registration Form</h2>
+  </div>
+
+  <form [formGroup]='UserDetails' (ngSubmit)='onSubmit()'>
+    <div class="form-group">
+      <span> Name: </span>
+      <input type="name" formControlName="name" name="name" class="from-control lg" placeholder="name " />
+      <br />
+      <span> Email: </span>
+      <input type="email" formControlName="email" name="email" class="from-control" placeholder="Email " /><br />
+      <span> Address: </span>
+      <input type="text" formControlName="address" name="address" class="from-control" placeholder="Address " />
+
+      <div>
+        <button type="submit" [disabled]="!UserDetails.valid" class="btn btn-primary">Add</button>
+        <button type="reset" (click)="reset()" class="btn btn-secondary">Reset Form</button>
+      </div>
+    </div>
+  </form>
+  <div>
+    name: {{UserDetails}}
+  </div>
+</div>
